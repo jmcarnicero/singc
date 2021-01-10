@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.scss';
+import './i18n';
+import { connect } from "react-redux"
+// import { useTranslation } from 'react-i18next';
+import { Container, Row, Col } from 'react-bootstrap';
+import { setData } from './reducers/userData'
+import Router from './Router'
 
-function App() {
+
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container fluid>
+        <Row>
+          <Col>
+            <Router />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    userData: state.userData,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setData: (data) => dispatch(setData(data)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
