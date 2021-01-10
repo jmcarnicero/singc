@@ -26,10 +26,10 @@ const Location = (props) => {
         <h3>¿Cual es la dirección de tu comercio o razón social?</h3>
         <Form>
             <Form.Group controlId="exampleForm.ControlInput1">
-                <Form.Control type="text" placeholder="" onChange={e => { setLocation(e.target.value) }} value={location} />
+                <Form.Control aria-label="location-input" type="text" placeholder="" onChange={e => { setLocation(e.target.value) }} value={location} />
             </Form.Group>
             {location.length > 1 && <Button variant="primary" type="submit" onClick={handledClickSubmit}>
-                Sigiente
+                Siguiente
                 </Button>}
         </Form>
     </>

@@ -35,10 +35,10 @@ const Phone = (props) => {
         <h4>¿Te importa darnos tu número de teléfono y correo electrónico ?</h4>
         <Form>
             <Form.Group controlId="exampleForm.ControlInput1">
-                <Form.Control type="number" placeholder="+34" onChange={e => { setDataTemp({ ...dataTemp, phone: e.target.value }) }} value={dataTemp.phone} />
+                <Form.Control aria-label="phone-input" type="number" placeholder="+34" onChange={e => { setDataTemp({ ...dataTemp, phone: e.target.value }) }} value={dataTemp.phone} />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
-                <Form.Control type="email" placeholder="Correo electronico" onChange={(e) => { setDataTemp({ ...dataTemp, email: e.target.value }) }} value={dataTemp.email}
+                <Form.Control aria-label="email-input" type="email" placeholder="Correo electronico" onChange={(e) => { setDataTemp({ ...dataTemp, email: e.target.value }) }} value={dataTemp.email}
                     isInvalid={!isEmail(dataTemp.email)}
                 />
                 <Form.Control.Feedback type="invalid">
@@ -50,18 +50,18 @@ const Phone = (props) => {
 
 
             <Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label={<a href="false" >¿Aceptas nuestra politica de privacidad?</a>} onChange={e => { setDataTemp({ ...dataTemp, politica: e.target.checked }) }} checked={dataTemp.politica} />
+                <Form.Check aria-label="politica-input" type="checkbox" label={<a href="false" >¿Aceptas nuestra politica de privacidad?</a>} onChange={e => { setDataTemp({ ...dataTemp, politica: e.target.checked }) }} checked={dataTemp.politica} />
             </Form.Group>
 
             <Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label={<a href="false" >Acepto que me llamen, sólo a la hora que quiero</a>} onChange={e => { setDataTemp({ ...dataTemp, horario: e.target.checked }) }} checked={dataTemp.horario} />
+                <Form.Check aria-label="horario-input" type="checkbox" label={<a href="false" >Acepto que me llamen, sólo a la hora que quiero</a>} onChange={e => { setDataTemp({ ...dataTemp, horario: e.target.checked }) }} checked={dataTemp.horario} />
             </Form.Group>
 
 
 
             {dataTemp.phone.length > 1 && dataTemp.email.length > 0 && isEmail(dataTemp.email) && dataTemp.politica &&
                 <Button variant="primary" type="submit" onClick={handledClickSubmit}>
-                    Sigiente
+                    Siguiente
                 </Button>}
         </Form>
     </>

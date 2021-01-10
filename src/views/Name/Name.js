@@ -26,7 +26,7 @@ const Name = (props) => {
         <h3>¿Como te llamas?</h3>
         <Form>
             <Form.Group controlId="exampleForm.ControlInput1">
-                <Form.Control type="text" placeholder="" onChange={e => { setName(e.target.value) }} value={name}
+                <Form.Control aria-label="name-input" type="text" placeholder="" onChange={e => { setName(e.target.value) }} value={name}
                     isInvalid={name.length > 20}
                 />
                 <Form.Control.Feedback type="invalid">
@@ -34,7 +34,7 @@ const Name = (props) => {
                     </Form.Control.Feedback>
             </Form.Group>
             {name.length > 0 && name.length <= 20 && < Button variant="primary" type="submit" onClick={handledClickSubmit}>
-                Sigiente
+                Siguiente
                 </Button>}
         </Form>
     </>

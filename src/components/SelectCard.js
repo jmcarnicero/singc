@@ -34,7 +34,7 @@ const SelectCard = (props) => {
 
     return (
         <div className="grid">
-            {renderBtn(props.options || [])}
+            {renderBtn(props.options)}
         </div>
     )
 }

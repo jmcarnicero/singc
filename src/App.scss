@@ -44,7 +44,6 @@ p {
   margin-top: 30px;
 }
 
-/* //// */
 
 .btn-outline-secondary:hover {
   background-color: white;
@@ -56,7 +55,6 @@ p {
 .btn:focus {
   outline: none !important;
   outline-offset: none !important;
-  // box-shadow: none !important;
   background-color: unset;
   color: unset;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.24);
@@ -90,6 +88,7 @@ p {
 .grid {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 
   &-item {
     font-size:  12px;
@@ -133,8 +132,4 @@ p {
   color: black;
   border: 1px solid #a0a0a0;
   background-color: #ff760012;
-}
-
-.suggestion { 
-
 }

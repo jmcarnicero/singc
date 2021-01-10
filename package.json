@@ -24,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
     "eject": "react-scripts eject",
     "testCo": "react-scripts test --coverage --reporters='jest-junit' --coverageDirectory='results/' --watchAll=false"
   },
@@ -49,5 +49,13 @@
   "devDependencies": {
     "@reduxjs/toolkit": "^1.5.0",
     "node-sass": "^4.14.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/*.{js,jsx}",
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
   }
 }

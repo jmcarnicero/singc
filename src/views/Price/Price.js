@@ -31,14 +31,14 @@ const Price = ({ userData }) => {
     return (
         <>
             <h1 className="logo">Singular <span className="cover">Cover</span></h1>
-            <h3>{name}</h3>
+            <h3 aria-label="h3-label" >{name}</h3>
             <SelectCard disabled className="grid-item btn-product price" options={selectedItems} setSelected={() => { }} selectedItems={[]} ></SelectCard>
             <h4>Sugerencias para ti</h4>
             <SelectCard className="grid-item btn-product suggestion" options={data} setSelected={setFinalSelected} selectedItems={finalSelected} ></SelectCard>
 
             {finalSelected.length > 0 &&
                 < Button variant="primary" type="submit" onClick={(e) => { handleOnClickDownloadJson(e) }}  >
-                    Sigiente
+                    Siguiente
                 </Button>
             }
         </>
